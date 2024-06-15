@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dt1{
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 25px;
+            padding-top: 10px;
+        }
+        dt{
+            font-size: 18px;
+            padding-bottom: 10px;
+            padding-left: 70px;
+            font-weight: bolder;
+           
+        }
+        input{
+            margin-left: 80px;
+        }
+        button{
+            margin-left: 200px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <dialog open style="margin-top: 20px; width: 500px; height: 480px;">
+        <h2 style="text-decoration: underline; padding-left: 150px; padding-top: -20px;">User Registarion Form</h2>
+        <form action="uadd" method="post" >
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" name="uname" placeholder="Enter User Name"></dd>
+                <dt>Password</dt>
+                <dd><input type="password" name="pword" placeholder="Enter Password"></dd>
+                <dt>First Name</dt>
+                <dd><input type="text" name="fname" placeholder="Enter First Name" ></dd>
+                <dt>Last Name</dt>
+                <dd><input type="text" name="fname" placeholder="Enter First Name" ></dd>
+                <dt>Phone Number</dt>
+                <dd><input type="text" name="phno" placeholder="Enter Phone Number" ></dd>
+                <dt>Mail ID</dt>
+                <dd><input type="text" name="mid" placeholder="Enter Mail ID" ></dd>
+                <dt>Address</dt>
+                <dd><input type="text" name="addr" placeholder="Enter Address" ></dd>
+            </dl>
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
+</body>
+</html>

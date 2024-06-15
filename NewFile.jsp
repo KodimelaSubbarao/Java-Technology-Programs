@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String msg=(String)request.getAttribute("msg");
-out.println(msg);
-%>
-<%@include file="link.html" %>
+
 </body>
 </html>

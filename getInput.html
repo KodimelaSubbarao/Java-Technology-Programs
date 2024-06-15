@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Phishing Url Detection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+@keyframes dot-keyframes {
+  0% {
+    opacity: 0.4;
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1, 1);
+  }
+}
+
+body{
+  background-size: cover;
+
+}
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+
+.btn-space {
+    margin-right: 5px;
+}
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>MaliciousUrl</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="static/css/swiper.css" rel="stylesheet">
+	<link href="static/css/styles.css" rel="stylesheet">
+	
+	
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+      <div class="container">
+
+          
+
+          <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                  <li class="nav-item">
+                      <a style="color: white;" class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                      <a style="color: white;" class="nav-link" href="/login">Signout</a>
+                  </li>
+              </ul>
+              
+                  
+              </span>
+          </div> <!-- end of navbar-collapse -->
+      </div> <!-- end of container -->
+  </nav> <!-- end of navbar -->
+  <!-- end of navigation -->
+
+  <br><br><br><br>
+  <!-- Header -->
+ 
+    <div class="fullscreen-bg">
+      <img class="body" src="static/images/bgimage.jpg" alt="alternative">
+    </div>
+    
+
+    <center style="margin-top: 90px;">
+      <h1 style="color: white;">Malicious URLs Detection using Machine Learning</h1>
+      <div class="single-url">
+        <div class="input-group input-group-lg" style="width: 800px;margin-top: 50px">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Enter a URL:</span>
+          </div>
+          <input type="text" class="form-control" id="url"  value="">
+          <button type="submit" class="btn getResult btn-primary btn-lg mb-2" style="margin-left: 10px">Submit</button>
+
+        </div>
+      </div>
+     
+    <div class="result"></div>
+  </center>
+ 
+</body>
+<script>
+ document.getElementsByClassName("getResult")[0].addEventListener("click",result);
+ function result()
+ {
+  
+    var div = document.querySelector(".result");
+    var urlname = document.getElementById('url').value;
+   $.ajax({          
+     data : {
+       name : urlname
+     },
+     type : 'GET',
+     url : '/result'
+   }).always(div.innerHTML= '<div class="loading-dots mt-4"><div class="loading-dots--dot"></div><div class="loading-dots--dot"></div><div class="loading-dots--dot"></div></div>')
+   .done(function(data) {
+  
+     if (data.error) {
+       alert(data.error);
+     }
+     else {
+      var newHTML = '<h3 class="text-white mt-4">This is a '+data+'</h3>';
+      div.innerHTML= newHTML;
+    }
+
+   });
+}
+
+document.getElementsByClassName("blacklist")[0].addEventListener("click",Add);
+function Add()
+{
+  var urlname = document.getElementById('url').value;
+  $.ajax({          
+     data : {
+       name : urlname
+     },
+     type : 'GET',
+     url : '/insert'
+   }).always(div.innerHTML= '<div class="loading-dots mt-4"><div class="loading-dots--dot"></div><div class="loading-dots--dot"></div><div class="loading-dots--dot"></div></div>')
+   .done(function(data) {
+  
+     if (data.error) {
+       alert(data.error);
+     }
+     else {
+        var newHTML = '<h3 class="text-white mt-4">'+data+'</h3>';
+        div.innerHTML= newHTML;
+    }
+
+   });
+}
+</script>
+ 
+      
+  <!-- Scripts -->
+  <script src="static/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+  <script src="static/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+  <script src="static/js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+  <script src="static/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>

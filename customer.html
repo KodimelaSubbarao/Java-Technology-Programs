@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Details</title>
+<style type="text/css">
+	.c1{
+		padding-top:30px;
+		border:2px solid red;
+		width: 400px;
+		height: 450px;
+		margin-top:50px;
+		margin-left:100px;
+		padding-left:20px;
+		background-color: gray;
+	}
+	label{
+		font-weight:bold;
+	}
+	
+	input{
+		padding-top:10px;
+		margin-top:10px;
+		width:200px;
+	}
+	.btn{
+		width:100px;
+		margin-left:100px;
+		margin-top:30px;
+		background-color: yellow;
+		color:red;
+		font-weight: bold;
+		text-align: center;
+		font-size: 20px;
+	}
+	h1{
+		text-align: center;	
+	}
+	
+</style>
+</head>
+<body>
+	<div class="c1">
+		<u><h1>Customer Details</h1></u>
+		<form action="CostomerD" method="post">
+			<label for="cid">Customer ID : </label><input type="text" name="cid" placeholder="Enter yout id"><br>
+			<label for="cname">Customer Name : </label><input type="text" placeholder="Enter Your name"
+				name="cname"><br> <label for="cpno">Phone No :
+			</label><input type="tel" name="cpno" placeholder="Enter Your Phone number"><br> <label for="cmail">Mail
+				Id : </label><input type="email" name="cmail" placeholder="Enter Your mail id"><br> <label
+				for="ccity">City : </label><input type="text" placeholder="Enter Your City Name" name="ccity"><br>
+			<label for="ccode">Pin Code : </label><input type="number"
+				name="ccode" min="000001" max="999999"  placeholder="Enter 6 Digit Pin Code " ><br> <input class="btn" type="submit" value="Details">
+		</form>
+	</div>
+</body>
+</html>

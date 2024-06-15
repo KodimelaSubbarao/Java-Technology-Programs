@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Products </title>
+<style type="text/css">
+    body{
+        display: flex;
+        justify-content: center; /* Horizontal center */
+        align-items: center; /* Vertical center */
+        height: 100vh; /* Full height of the viewport */
+        margin: 0; 
+    }
+    .f1{
+        box-sizing: border-box;
+        width: 400px;
+        height: 420px;
+        border: 7px dotted whitesmoke;
+        padding-left: 100px;
+        background-color: darkgoldenrod;
+        border-radius: 10px;
+        color: honeydew;
+    }
+    dt{
+        font-size: 17px;
+        padding-top: 15px;
+        font-weight: bold;
+    }
+    dd{
+        padding-top: 5px;
+    }
+    input{
+        border-radius: 5px;
+        padding-left: 3px;
+        height: 20px;
+        width: 150px;
+    }
+    .btn1{
+        border-radius: 10px;
+        width: 120px;
+        height: 30px;
+        margin-left: -15px;
+        margin-right: 35px;
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        background-color: green;
+    }
+    .btn2{
+        border-radius: 10px;
+        width: 90px;
+        height: 30px;
+        margin-left: -5px;
+        font-weight: bold;
+        background-color: red;
+        font-size: 16px;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="f1">
+        <h1 style="text-decoration: underline; color: black;">Product Details</h1>
+        <form action="add" method="post" >
+            <dl>
+                <dt>Product Code</dt>
+                <dd><input type="text" name="code" placeholder="Enter Product Code " required></dd>
+                <dt>Product Name</dt>
+                <dd><input type="text" name="name" placeholder="Enter Product Name" required></dd>
+                <dt>Product Price</dt>
+                <dd><input type="text" name="price" pattern="\d{1,}\.?\d{1,}" placeholder="Enter Product Price" required></dd>
+                <dt>Product Quantity</dt>
+                <dd><input type="text" name="qty" pattern="\d{1,}" placeholder="Enter Product Quantity " required></dd>
+            </dl>
+            <button class="btn1" type="submit"> Add Product</button> 
+            <button class="btn2" type="reset">Clear</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dt1{
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 25px;
+            padding-top: 10px;
+        }
+        dt{
+            font-size: 18px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+            font-weight: bolder;
+        }
+        input{
+            margin-left: 30px;
+        }
+        button{
+            margin-left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <dialog open style="margin-top: 100px; width: 300px; height: 200px;">
+
+        <form action="forgot" method="post" >
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" name="uname" placeholder="Enter User Name..."></dd>
+                <dt class="dt1">(or)</dt>
+                <dt>Mail ID</dt>
+                <dd><input type="text" name="mid" placeholder="Enter Mail Id..."></dd>
+            </dl>
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
+</body>
+</html>

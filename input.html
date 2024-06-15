@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Country Cities</title>
+
+<script type="text/javascript">
+	function sendRequest()
+	{
+		frm.submit();
+	}
+</script>
+</head>
+<body>
+<h1 style="color: red; text-align: center;">Htmel to Servlet Communication Using Javascript</h1>
+	
+	<br>
+	<center>
+	<form action="city" method="post" name="frm">
+		<dd>
+			<dt>Select County Name </dt>
+			<dl>
+				<select name="country" onchange="sendRequest()">
+					<option value=" " selected>--select--</option>
+					<option value="0">India</option>
+					<option value="1">Pakistan </option>
+					<option value="2">China</option>
+					<option value="3">Usa</option>
+					<option value="4">UK</option>
+					<option value="5">France</option>
+				
+				</select>
+			</dl>
+		</dd>
+		
+	</form>
+	</center>
+</body>
+</html>
