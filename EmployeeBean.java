@@ -1,23 +1,19 @@
-package com.sa.bean;
+package emp;
 
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class EmployeeBean implements Serializable
 {
-	private Integer empno;
-	private String ename;
-	
-	private String ejob;
-	private Double esal;
-	
-	public EmployeeBean() {
+	private int eid;
+	private String ename,ejob;
+	private float esal,ehra,eda,etotsal;
+	public EmployeeBean() {}
+	public int getEid() {
+		return eid;
 	}
-	public Integer getEmpno() {
-		return empno;
-	}
-	public void setEmpno(Integer empno) {
-		this.empno = empno;
+	public void setEid(int eid) {
+		this.eid = eid;
 	}
 	public String getEname() {
 		return ename;
@@ -31,10 +27,29 @@ public class EmployeeBean implements Serializable
 	public void setEjob(String ejob) {
 		this.ejob = ejob;
 	}
-	public Double getEsal() {
+	public float getEsal() {
 		return esal;
 	}
-	public void setEsal(Double esal) {
+	public void setEsal(float esal) {
 		this.esal = esal;
 	}
+	public float getEhra() {
+		return ehra;
+	}
+	public void setEhra(float ehra) {
+		this.ehra = ehra;
+	}
+	public float getEda() {
+		return eda;
+	}
+	public void setEda(float eda) {
+		this.eda = eda;
+	}
+	public float getEtotsal() {
+		return etotsal;
+	}
+	public void setEtotsal(float etotsal) {
+		this.etotsal = etotsal;
+	}
+	
 }

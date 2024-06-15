@@ -1,28 +1,29 @@
-package com.voidmain.dao;
+package app;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-public final class DBConnection
+public class DBConnection 
 {
+	private static Connection con=null;
 	
-	private DBConnection()
+	private DBConnection() {}
+	
+	static 
 	{
-		
-	}
-	public static Connection getConnection() throws SQLException,ClassNotFoundException
-	{
-		Connection con=null;
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con=DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-08IIGEE:1521:xe","system","subbu");
-		}
-		catch(SQLException | ClassNotFoundException sql)
+		try 
 		{
-			sql.printStackTrace();
-			throw sql;
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection(DBInfo.dbUrl,DBInfo.uNmae,DBInfo.pWord);
 		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public static Connection getCon()
+	{
 		return con;
+		
 	}
 }

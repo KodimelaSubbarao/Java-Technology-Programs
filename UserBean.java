@@ -1,68 +1,101 @@
-package product.user.beans;
+package user;
 
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class UserBean implements Serializable
 {
-	private String uName,pWord,fName,lName,mId,uAddr;
-	private long pHno;
-	public UserBean() {}
+private String mailId,fName,mName,lName,fullName,fatherName,uName,pWord,address;
+private long phNo,aPhNo;
 
-	public String getuName() {
-		return uName;
-	}
+public UserBean() {}
 
-	public void setuName(String uName) {
-		this.uName = uName;
-	}
+public String getMailId() {
+	return mailId;
+}
 
-	public String getpWord() {
-		return pWord;
-	}
+public void setMailId(String mailId) {
+	this.mailId = mailId;
+}
 
-	public void setpWord(String pWord) {
-		this.pWord = pWord;
-	}
+public String getfName() {
+	return fName;
+}
 
-	public String getfName() {
-		return fName;
-	}
+public void setfName(String fName) {
+	this.fName = fName;
+}
 
-	public void setfName(String fName) {
-		this.fName = fName;
-	}
+public String getmName() {
+	return mName;
+}
 
-	public String getlName() {
-		return lName;
-	}
+public void setmName(String mName) {
+	this.mName = mName;
+}
 
-	public void setlName(String lName) {
-		this.lName = lName;
-	}
+public String getlName() {
+	return lName;
+}
 
-	public String getmId() {
-		return mId;
-	}
+public void setlName(String lName) {
+	this.lName = lName;
+}
 
-	public void setmId(String mId) {
-		this.mId = mId;
-	}
+public String getFullName() {
+	return fullName;
+}
 
-	public String getuAddr() {
-		return uAddr;
-	}
+public void setFullName(String fullName) {
+	this.fullName = fullName;
+}
 
-	public void setuAddr(String uAddr) {
-		this.uAddr = uAddr;
-	}
+public String getFatherName() {
+	return fatherName;
+}
 
-	public long getpHno() {
-		return pHno;
-	}
+public void setFatherName(String fatherName) {
+	this.fatherName = fatherName;
+}
 
-	public void setpHno(long pHno) {
-		this.pHno = pHno;
-	}
-	
+public String getuName() {
+	return uName;
+}
+
+public void setuName(String uName) {
+	this.uName = uName;
+}
+
+public String getpWord() {
+	return pWord;
+}
+
+public void setpWord(String pWord) {
+	this.pWord = pWord;
+}
+
+public String getAddress() {
+	return address;
+}
+
+public void setAddress(String address) {
+	this.address = address;
+}
+
+public long getPhNo() {
+	return phNo;
+}
+
+public void setPhNo(long phNo) {
+	this.phNo = phNo;
+}
+
+public long getaPhNo() {
+	return aPhNo;
+}
+
+public void setaPhNo(long aPhNo) {
+	this.aPhNo = aPhNo;
+}
+
 }
